@@ -1,0 +1,42 @@
+IEEE_BASELINE_COMPARISON = [
+    {
+        "Title": "Practical Byzantine Fault Tolerance (PBFT)",
+        "Domain": "Distributed Consensus",
+        "Method / Approach": "Leader-based Byzantine consensus with state machine replication",
+        "Dataset / Evaluation": "Prototype replicated-service deployment",
+        "Performance / Key Results": "Provides strong safety and liveness under Byzantine faults with practical latency at modest replica counts",
+        "Limitations": "Communication cost and coordination overhead rise quickly as cluster size grows",
+    },
+    {
+        "Title": "Raft",
+        "Domain": "Distributed Consensus",
+        "Method / Approach": "Leader-based crash-fault consensus for replicated logs",
+        "Dataset / Evaluation": "Replicated service implementation with failure injection",
+        "Performance / Key Results": "Serves as a strong baseline for benign-failure replication with low operational complexity",
+        "Limitations": "Does not address Byzantine or adversarial node behavior",
+    },
+    {
+        "Title": "HotStuff",
+        "Domain": "Distributed Consensus",
+        "Method / Approach": "Pipelined BFT consensus with linear communication in the steady state",
+        "Dataset / Evaluation": "Prototype evaluation with distributed replicas",
+        "Performance / Key Results": "Improves scalability relative to classical BFT protocols while preserving Byzantine resilience",
+        "Limitations": "Still depends on partial synchrony and can bottleneck around leader performance",
+    },
+    {
+        "Title": "HoneyBadgerBFT",
+        "Domain": "Distributed Consensus",
+        "Method / Approach": "Asynchronous BFT protocol with randomized common subset and batch processing",
+        "Dataset / Evaluation": "Geo-distributed asynchronous deployment experiments",
+        "Performance / Key Results": "Maintains progress without synchrony assumptions and remains resilient under unstable network conditions",
+        "Limitations": "Higher cryptographic and batching overhead can increase latency and implementation complexity",
+    },
+    {
+        "Title": "Byzantine-Robust Distributed Learning (Krum-style aggregation)",
+        "Domain": "Distributed ML",
+        "Method / Approach": "Robust gradient aggregation designed to filter malicious worker updates",
+        "Dataset / Evaluation": "Distributed learning benchmarks with adversarial workers",
+        "Performance / Key Results": "Retains convergence more reliably than naive averaging when some workers are compromised",
+        "Limitations": "Often validated on limited benchmark diversity and can struggle with highly non-IID or high-dimensional settings",
+    },
+]
